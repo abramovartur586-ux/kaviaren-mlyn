@@ -1,35 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moje portfólio — začiatok</title>
-  <!-- Vzhľad stránky je v samostatnom súbore styles.css (vrstva CSS) -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mlyn – kaviareň a pražiareň výberovej kávy v Žiline.">
+    <title>MLYN | Kaviareň a pražiareň</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
-  <main class="uvitanie">
-    <div class="emoji">👋</div>
-    <h1>Tu vznikne moje portfólio</h1>
-    <p class="podtext">
-      Toto je štartová stránka kurzu <strong>Tvorba webstránok</strong>.
-      Odteraz ju budeš meniť ty — s pomocou AI asistenta.
-    </p>
+    <header class="site-header">
+        <div class="container header-inner">
 
-    <div class="karta">
-      <p class="karta-nadpis">Ako začať:</p>
-      <ol>
-        <li>Otvor <strong>Copilot Chat</strong> (ikona Copilota vpravo) — sem píšeš, čo chceš vytvoriť.</li>
-        <li>Tento súbor <code>index.html</code> si pozri v <strong>živom náhľade</strong>: pravý klik naň → <em>Show Preview</em>.</li>
-        <li>Choď na <strong>Blok 7</strong> kurzu a postupuj podľa neho.</li>
-      </ol>
-    </div>
+            <a href="index.html" class="logo">
+                <span class="logo-name">MLYN.</span>
+                <span class="logo-subtitle">Kaviareň a pražiareň</span>
+            </a>
 
-    <p class="poznamka">
-      Keď spravíš prvú zmenu, tento text pokojne zmaž — je len na úvod.
-    </p>
-  </main>
+            <button class="menu-toggle"
+                    aria-label="Otvoriť navigáciu"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navigation" id="navigation" aria-label="Hlavná navigácia">
+                <a href="index.html" class="active" aria-current="page">Domov</a>
+                <a href="menu.html">Menu</a>
+                <a href="rezervacia.html">Priestor a rezervácia</a>
+                <a href="zrnkovakava.html">Zrnková káva</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main">
+
+    </main>
 
 </body>
 </html>
