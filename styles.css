@@ -654,3 +654,29 @@ button:focus-visible {
     }
 }
 
+
+/* Menu photographs */
+
+.menu-photo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.menu-item {
+    gap: 25px;
+}
+
+@media (max-width: 600px) {
+    .menu-photo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-item {
+        gap: 12px;
+    }
+}
+
