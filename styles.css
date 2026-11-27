@@ -505,3 +505,152 @@ button:focus-visible {
         transition: none !important;
     }
 }
+/* Menu page */
+
+.menu-page {
+    padding-top: 55px;
+    padding-bottom: 65px;
+    min-height: 70vh;
+}
+
+.page-intro {
+    margin-bottom: 40px;
+}
+
+.page-intro h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.1;
+    color: var(--burgundy);
+    margin-bottom: 20px;
+}
+
+.page-intro p {
+    font-size: 18px;
+    max-width: 650px;
+}
+
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    padding: 14px 24px;
+    border: 1px solid var(--burgundy);
+    background: transparent;
+    color: var(--burgundy);
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+.menu-group[hidden] {
+    display: none;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 30px 10px;
+    border-bottom: 1px solid #D0C5B8;
+}
+
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-info h2 {
+    color: var(--burgundy);
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.item-info p {
+    font-size: 15px;
+}
+
+.item-price {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.item-price strong {
+    display: block;
+    color: var(--burgundy);
+    font-size: 23px;
+}
+
+.item-price small {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.allergens {
+    margin-top: 45px;
+    padding: 30px;
+    background: #E8E1D6;
+}
+
+.allergens h2 {
+    font-size: 20px;
+    color: var(--burgundy);
+    margin-bottom: 15px;
+}
+
+.allergens p {
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .menu-page {
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    .page-intro p {
+        font-size: 16px;
+    }
+
+    .menu-filters {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .menu-item {
+        padding: 22px 0;
+        gap: 12px;
+    }
+
+    .item-info h2 {
+        font-size: 18px;
+    }
+
+    .item-info p {
+        font-size: 13px;
+    }
+
+    .item-price strong {
+        font-size: 18px;
+    }
+
+    .allergens {
+        padding: 20px;
+    }
+}
+
