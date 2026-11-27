@@ -61,3 +61,81 @@ if (filterButtons.length > 0) {
     });
 
 }
+// Rezervacny formular
+
+const reservationForm = document.getElementById("reservation-form");
+
+if (reservationForm) {
+
+    const dateInput = document.getElementById("datum");
+    const timeInput = document.getElementById("cas");
+    const status = document.getElementById("reservation-status");
+
+    function localDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    }
+
+    dateInput.min = localDate(new Date());
+
+    function validateReservationTime() {
+
+        timeInput.setCustomValidity("");
+
+        if (!dateInput.value || !timeInput.value) return;
+
+        const selected = new Date(
+            `${dateInput.value}T${timeInput.value}`
+        );
+
+        const weekday = selected.getDay();
+
+        const opening = weekday === 0 ? "09:00" :
+                        weekday === 6 ? "08:00" : "07:30";
+
+        const closing = weekday === 0 ? "17:00" :
+                        weekday === 6 ? "18:00" : "19:00";
+
+        if (selected <= new Date()) {
+            timeInput.setCustomValidity(
+                "Vyberte dátum a čas v budúcnosti."
+            );
+        } else if (
+            timeInput.value < opening ||
+            timeInput.value >= closing
+        ) {
+            timeInput.setCustomValidity(
+                `Otváracie hodiny: ${opening} – ${closing}.`
+            );
+        }
+    }
+
+    dateInput.addEventListener("input", validateReservationTime);
+    timeInput.addEventListener("input", validateReservationTime);
+
+    reservationForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        validateReservationTime();
+
+        if (!reservationForm.reportValidity()) return;
+
+        const name = document.getElementById("meno").value;
+        const date = dateInput.value.split("-").reverse().join(".");
+        const time = timeInput.value;
+        const people = document.getElementById("osoby").value;
+
+        status.textContent =
+            `Ďakujeme, ${name}! Ukážková požiadavka na ${date} o ${time} ` +
+            `pre ${people} osôb bola spracovaná. ` +
+            `Nejde o skutočnú rezerváciu.`;
+
+        reservationForm.reset();
+        timeInput.setCustomValidity("");
+
+    });
+}
+

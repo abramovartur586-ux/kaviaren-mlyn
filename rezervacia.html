@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pracovné zóny a rezervácia stola v kaviarni Mlyn.">
+    <title>Priestor a rezervácia | MLYN</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-name">MLYN.</span>
+                <span class="logo-subtitle">Kaviareň a pražiareň</span>
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Otvoriť navigáciu"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navigation" id="navigation" aria-label="Hlavná navigácia">
+                <a href="index.html">Domov</a>
+                <a href="menu.html">Menu</a>
+                <a href="rezervacia.html" class="active" aria-current="page">Priestor a rezervácia</a>
+                <a href="zrnkovakava.html">Zrnková káva</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container reservation-page" id="main">
+
+        <div class="page-intro">
+
+            <span class="eyebrow">PRÁCA · ODDYCH · STRETNUTIA</span>
+
+            <h1>Priestor a rezervácia</h1>
+
+            <p>Miesto, kde sa dobrá káva spája s príjemným prostredím.</p>
+
+        </div>
+
+        <section class="space-layout">
+
+            <div class="space-gallery">
+
+                <img class="gallery-main"
+                     src="img/hero.jpg"
+                     alt="Interiér kaviarne s drevenými stolmi">
+
+                <img src="img/workspace.jpg"
+                     alt="Pracovný priestor s notebookom">
+
+                <img src="img/seating.jpg"
+                     alt="Pohodlné miesto na sedenie">
+
+            </div>
+
+            <div class="space-content">
+
+                <h2>Ideálne miesto na prácu a stretnutia</h2>
+
+                <p>
+                    Či už pracujete, študujete alebo si chcete
+                    vychutnať chvíľu pokoja, v Mlyne nájdete
+                    príjemné prostredie pre každú príležitosť.
+                </p>
+
+                <ul class="space-benefits">
+                    <li>Rýchle Wi-Fi zdarma</li>
+                    <li>Pracovné zóny</li>
+                    <li>Elektrické zásuvky</li>
+                    <li>Pokojná atmosféra</li>
+                </ul>
+
+                <a href="#rezervacia" class="btn btn-primary">
+                    Rezervovať stôl
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="form-section" id="rezervacia">
+
+            <span class="eyebrow">NAPLÁNUJTE SI NÁVŠTEVU</span>
+
+            <h2>Rezervačný formulár</h2>
+
+            <p>Vyberte si dátum, čas a počet osôb.</p>
+
+            <form id="reservation-form" class="site-form">
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="meno">Meno *</label>
+                        <input type="text" id="meno" name="meno"
+                               autocomplete="name"
+                               placeholder="Vaše meno"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email"
+                               autocomplete="email"
+                               placeholder="vas@email.sk"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="datum">Dátum *</label>
+                        <input type="date" id="datum" name="datum"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="cas">Čas *</label>
+                        <input type="time" id="cas" name="cas"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="osoby">Počet osôb *</label>
+
+                        <select id="osoby" name="osoby" required>
+                            <option value="1">1 osoba</option>
+                            <option value="2">2 osoby</option>
+                            <option value="3">3 osoby</option>
+                            <option value="4">4 osoby</option>
+                            <option value="5">5 osôb</option>
+                            <option value="6">6 osôb</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Rezervovať
+                </button>
+
+                <p class="demo-note">
+                    Ide o ukážkový formulár školského projektu.
+                    Údaje sa nikam neodosielajú a rezervácia
+                    nevzniká.
+                </p>
+
+                <p id="reservation-status"
+                   class="form-status"
+                   role="status"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <span class="footer-logo">MLYN.</span>
+                <p>Kaviareň a pražiareň</p>
+                <p>Žilina, Slovensko</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Kontakt</h3>
+                <p>info@example.com (demo)</p>
+                <a href="index.html#kontakt">Otváracie hodiny a adresa</a>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Objavte Mlyn</h3>
+                <a href="menu.html">Menu</a>
+                <a href="rezervacia.html">Rezervácia</a>
+                <a href="zrnkovakava.html">Zrnková káva</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 MLYN.</p>
+            <p>Školský projekt · Ilustračné údaje</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
