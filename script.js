@@ -139,3 +139,92 @@ if (reservationForm) {
     });
 }
 
+
+// Objednavka zrnkovej kavy
+
+const orderForm = document.getElementById("order-form");
+
+if (orderForm) {
+
+    const productSelect = document.getElementById("order-product");
+    const quantityInput = document.getElementById("order-quantity");
+    const totalElement = document.getElementById("order-total");
+    const orderStatus = document.getElementById("order-status");
+
+    const coffeePrices = {
+        "Mlyn Blend": 1090,
+        "Etiópia": 1290,
+        "Brazília": 1190
+    };
+
+    const currency = new Intl.NumberFormat("sk-SK", {
+        style: "currency",
+        currency: "EUR"
+    });
+
+    function updateTotal() {
+
+        const quantity = quantityInput.valueAsNumber;
+
+        if (!Number.isInteger(quantity) ||
+            quantity < 1 || quantity > 20) {
+
+            totalElement.textContent = "—";
+            return null;
+
+        }
+
+        const price = coffeePrices[productSelect.value];
+        const total = price * quantity / 100;
+
+        totalElement.textContent = currency.format(total);
+
+        return total;
+
+    }
+
+    document.querySelectorAll(".order-btn").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            productSelect.value = button.dataset.product;
+            orderStatus.textContent = "";
+
+            updateTotal();
+
+        });
+
+    });
+
+    productSelect.addEventListener("change", updateTotal);
+    quantityInput.addEventListener("input", updateTotal);
+
+    orderForm.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        if (!orderForm.reportValidity()) return;
+
+        const total = updateTotal();
+
+        if (total === null) return;
+
+        const name = document.getElementById("order-name").value;
+        const product = productSelect.value;
+        const quantity = quantityInput.value;
+
+        orderStatus.textContent =
+            `Ďakujeme, ${name}! ` +
+            `Ukážková objednávka: ${product}, ${quantity} bal. ` +
+            `Celková cena: ${currency.format(total)}. ` +
+            `Nejde o skutočnú objednávku.`;
+
+        orderForm.reset();
+        updateTotal();
+
+    });
+
+    updateTotal();
+
+}
+

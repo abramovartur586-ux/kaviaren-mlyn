@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Výberová zrnková káva z pražiarne Mlyn.">
+    <title>Zrnková káva | MLYN</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-name">MLYN.</span>
+                <span class="logo-subtitle">Kaviareň a pražiareň</span>
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Otvoriť navigáciu"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navigation" id="navigation" aria-label="Hlavná navigácia">
+                <a href="index.html">Domov</a>
+                <a href="menu.html">Menu</a>
+                <a href="rezervacia.html">Priestor a rezervácia</a>
+                <a href="zrnkovakava.html" class="active" aria-current="page">Zrnková káva</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container coffee-page" id="main">
+
+        <div class="page-intro">
+
+            <span class="eyebrow">ČERSTVO PRAŽENÁ · VÝBEROVÁ KÁVA</span>
+
+            <h1>Zrnková káva</h1>
+
+            <p>
+                Výberová káva z našej pražiarne – aj u vás doma.
+            </p>
+
+        </div>
+
+        <!-- Produkty -->
+
+        <section class="coffee-grid" aria-label="Ponuka zrnkovej kávy">
+
+            <article class="coffee-card">
+
+                <img src="img/mlyn-blend.jpg"
+                     alt="Bordové balenie kávy Mlyn Blend">
+
+                <div class="coffee-card-content">
+
+                    <span class="coffee-tag">ESPRESSO BLEND</span>
+
+                    <h2>Mlyn Blend</h2>
+
+                    <p>
+                        Vyvážená chuť s jemnými orechovými tónmi.
+                        Ideálna na prípravu espressa.
+                    </p>
+
+                    <div class="coffee-price">
+                        <strong>10,90 €</strong>
+                        <span>/ 250 g</span>
+                    </div>
+
+                    <a href="#objednavka"
+                       class="btn btn-secondary order-btn"
+                       data-product="Mlyn Blend">
+                        Objednať
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="coffee-card">
+
+                <img src="img/etiopia.jpg"
+                     alt="Krémové balenie kávy Etiópia">
+
+                <div class="coffee-card-content">
+
+                    <span class="coffee-tag">SINGLE ORIGIN</span>
+
+                    <h2>Etiópia</h2>
+
+                    <p>
+                        Ovocná a kvetinová chuť s príjemnou
+                        sviežosťou. Vhodná na filtrovanú kávu.
+                    </p>
+
+                    <div class="coffee-price">
+                        <strong>12,90 €</strong>
+                        <span>/ 250 g</span>
+                    </div>
+
+                    <a href="#objednavka"
+                       class="btn btn-secondary order-btn"
+                       data-product="Etiópia">
+                        Objednať
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="coffee-card">
+
+                <img src="img/brazilia.jpg"
+                     alt="Hnedé balenie kávy Brazília">
+
+                <div class="coffee-card-content">
+
+                    <span class="coffee-tag">SINGLE ORIGIN</span>
+
+                    <h2>Brazília</h2>
+
+                    <p>
+                        Jemná čokoládová chuť s prirodzenou
+                        sladkosťou a príjemným zakončením.
+                    </p>
+
+                    <div class="coffee-price">
+                        <strong>11,90 €</strong>
+                        <span>/ 250 g</span>
+                    </div>
+
+                    <a href="#objednavka"
+                       class="btn btn-secondary order-btn"
+                       data-product="Brazília">
+                        Objednať
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- Objednavkovy formular -->
+
+        <section class="form-section" id="objednavka">
+
+            <span class="eyebrow">KÁVA AJ U VÁS DOMA</span>
+
+            <h2>Objednávkový formulár – osobný odber</h2>
+
+            <p>
+                Vyberte si svoju obľúbenú kávu a množstvo balení.
+            </p>
+
+            <form id="order-form" class="site-form">
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="order-name">Meno *</label>
+                        <input type="text"
+                               id="order-name"
+                               autocomplete="name"
+                               placeholder="Vaše meno"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="order-email">E-mail *</label>
+                        <input type="email"
+                               id="order-email"
+                               autocomplete="email"
+                               placeholder="vas@email.sk"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="order-product">Produkt *</label>
+
+                        <select id="order-product" required>
+                            <option value="Mlyn Blend">Mlyn Blend</option>
+                            <option value="Etiópia">Etiópia</option>
+                            <option value="Brazília">Brazília</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="order-quantity">Množstvo (balenia) *</label>
+
+                        <input type="number"
+                               id="order-quantity"
+                               min="1"
+                               max="20"
+                               step="1"
+                               value="1"
+                               required>
+
+                    </div>
+
+                </div>
+
+                <div class="order-total">
+
+                    <span>Celková cena:</span>
+
+                    <strong id="order-total"
+                            aria-live="polite">10,90 €</strong>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Objednať
+                </button>
+
+                <p class="demo-note">
+                    Ide o ukážkový formulár školského projektu.
+                    Údaje sa nikam neodosielajú a nevzniká
+                    skutočná objednávka ani povinnosť platby.
+                </p>
+
+                <p id="order-status"
+                   class="form-status"
+                   role="status"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <span class="footer-logo">MLYN.</span>
+                <p>Kaviareň a pražiareň</p>
+                <p>Žilina, Slovensko</p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Kontakt</h3>
+                <p>info@example.com (demo)</p>
+                <a href="index.html#kontakt">
+                    Otváracie hodiny a adresa
+                </a>
+            </div>
+
+            <div class="footer-nav">
+                <h3>Objavte Mlyn</h3>
+                <a href="menu.html">Menu</a>
+                <a href="rezervacia.html">Rezervácia</a>
+                <a href="zrnkovakava.html">Zrnková káva</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 MLYN.</p>
+            <p>Školský projekt · Ilustračné údaje</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
